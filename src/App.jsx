@@ -7,7 +7,7 @@ function App() {
   return (
     <main>
       <div className='pattern'></div>
-    <div className='wrapper'>
+      <div className='wrapper'>
       <Header></Header>
       <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm}></Search>
       <h1>{searchTerm}</h1>
