@@ -26,7 +26,6 @@ function App() {
     setIsLoading(true);
     setErrorMessage('');    
     try{
-
       setIsLoading(true);
       setErrorMessage('');
       const endpoint = `${API_BASE_URL}/discover/movie?sort_by=popularity.desc`;
@@ -54,19 +53,15 @@ function App() {
 
   useEffect( () => {
     getMovies();
-
   }, [])
   return (
     <main>
       <div className='pattern'></div>
       <div className='wrapper'>
-      <Header>
-        <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm}></Search>
-      </Header>
-
+      <Header />
+      <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       <section className='all-movies'>
-
-        <h2 className="mt-[40px]">All Movies</h2>
+        <h2>All Movies</h2>
         {isLoading ? (
           <Spinner />
         ) : errorMessage ? (
@@ -77,7 +72,6 @@ function App() {
           ))}
         </ul>)}
       </section>
-      
     </div>
     </main>
   )
