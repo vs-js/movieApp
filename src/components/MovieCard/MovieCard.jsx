@@ -2,11 +2,14 @@ import React from 'react'
 import NoMovieImage from '../../assets/images/no-movie.png'
 import StarIconImage from '../../assets/icons/star.svg'
 
+
+const url = 'https://image.tmdb.org/t/p/w500'
+
 const MovieCard = ({movie: {title, vote_average, poster_path, release_date, original_language}
 }) => {
   return (
     <div className='movie-card'>
-        <img src={poster_path ? `https://image.tmdb.org/t/p/w500/${poster_path}` : '{NoMovieImage}'} alt='{title}'/>
+        <img src={poster_path ? `${url}/${poster_path}` : NoMovieImage} alt='{title}'/>
     
     <div className='mt-4'>
         <h3>{title}</h3>
